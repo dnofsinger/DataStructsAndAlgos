@@ -1,7 +1,11 @@
 
-public class BinarySearch {
+/**
+ * A binary search Utility class that houses static functions
+ * to solve binary search questions in LeetCode
+ */
+public class BinarySearchUtil{
 
-    int binarySearch(int[] nums, int target){
+    static int binarySearch(int[] nums, int target){
         if(nums == null || nums.length == 0)
             return -1;
 
