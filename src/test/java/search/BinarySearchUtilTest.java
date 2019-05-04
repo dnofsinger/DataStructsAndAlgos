@@ -1,4 +1,7 @@
+package search;
+
 import org.junit.Test;
+import search.BinarySearchUtil;
 
 import static org.junit.Assert.assertEquals;
 

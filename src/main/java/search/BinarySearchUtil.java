@@ -1,3 +1,4 @@
+package search;
 
 /**
  * A binary search Utility class that houses static functions
