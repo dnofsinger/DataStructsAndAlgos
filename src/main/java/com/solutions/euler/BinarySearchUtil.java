@@ -1,4 +1,4 @@
-
+package com.solutions.euler;
 /**
  * A binary search Utility class that houses static functions
  * to solve binary search questions in LeetCode

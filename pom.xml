@@ -6,7 +6,13 @@
 
     <groupId>org.dnofsinger.solutions</groupId>
     <artifactId>solutions</artifactId>
+    <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+    </properties>
 
     <dependencies>
         <dependency>
