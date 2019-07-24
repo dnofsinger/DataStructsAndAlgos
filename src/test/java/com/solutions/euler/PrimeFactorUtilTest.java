@@ -28,4 +28,24 @@ public class PrimeFactorUtilTest{
         assertEquals(6857, result);
     }
 
+
+    /*
+    Euler Problem 5:
+    2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+
+    What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20? */
+
+    @Test
+    public void test_findSmallestProductWithinRange(){
+
+        int result = PrimeFactorUtil.findSmallestProductWithinRange(10);
+
+        assertEquals(2520, result);
+
+        result = PrimeFactorUtil.findSmallestProductWithinRange(20);
+
+        assertEquals(232792560, result);
+
+    }
+
 }

@@ -2,8 +2,8 @@ package com.solutions.euler;
 
 import java.util.List;
 import java.util.ArrayList;
-
-
+import java.util.Map;
+import java.util.HashMap;
 
 public class PrimeFactorUtil{
     
@@ -61,4 +61,41 @@ public class PrimeFactorUtil{
 
     }
 
+    public static int findSmallestProductWithinRange(int range){
+        
+        Map<Integer, Integer> minimumPrimesNeeded = new HashMap<>();
+
+        //Go through every number in range
+        for(int i = 2; i <= range; i++){
+            int number = i;
+            //Get the factors of i
+            for (int j = 2; j <= number; j++){
+                int primeNumberNeeded = 0;
+                while(number % j == 0){
+                    //Divide the current number by the factor
+                    number /= j;
+                    //Add the number of this prime needed
+                    primeNumberNeeded++;
+                }
+                //Retrieved factors, check to see if it's the bare minimum needed
+                if(!minimumPrimesNeeded.containsKey(j)){
+                    minimumPrimesNeeded.put(j, primeNumberNeeded);
+                }else if(minimumPrimesNeeded.get(j) < primeNumberNeeded){
+                    //If we do have the factor in the map and it has less than what we counted this iteration
+                    minimumPrimesNeeded.put(j, primeNumberNeeded);
+                }
+            }
+        }
+
+        //Once we grabbed the minimum factors needed for every number in range
+        //Let's multiple the numbers to get the result
+        int result = 1;
+        for(Map.Entry<Integer, Integer> entry : minimumPrimesNeeded.entrySet()){
+            if(entry.getValue() != 0)
+                result *= Math.pow(entry.getKey(),entry.getValue());
+        }
+
+        return result;
+
+    }
 }
